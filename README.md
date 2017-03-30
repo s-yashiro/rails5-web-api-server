@@ -5,8 +5,16 @@ A Basic Web API server for simple tests, serving JSON and benchmark.
 ## Usage
 
 ```
+# development(WEBrick)
+
 $ bundle install
-$ rails s
+$ rails s WEBrick
+```
+
+```
+# production(Nginx+Puma)
+
+$ SECRET_KEY_BASE=$(rake secret) RAILS_SERVE_STATIC_FILES=true RAILS_ENV=production puma -w $(nproc)
 ```
 
 ## Get fibonacci number
